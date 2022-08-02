@@ -20,9 +20,7 @@
 
 title: see-math 
 email: seemath311@gmail.com
-description: >- # this means to ignore newlines until "baseurl:"
-Visualizing various algorithms.
- 
+description: 
 bseurl: /docs
 url: https://see-math.github.io
 twitter_username: 
