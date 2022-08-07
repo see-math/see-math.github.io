@@ -1,7 +1,7 @@
 ---
-layout: page
-title: Elements
-image: assets/images/pic01.jpg
+layout: secant
+title: Secant Method
+description: Performs secant method
 nav-menu: true
 ---
 

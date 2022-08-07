@@ -1,0 +1,82 @@
+<html>
+
+{% include head.html %}
+
+
+
+{% include header.html %}
+
+<h1 align="center">Newton-Raphson Method</h1>
+<div class="flex-container3">
+    <div class="flex-item">
+        <p>User Input:</p>
+        <form name="formula" onsubmit="return process(this);">
+            Enter the value:
+            <input name="x" type="text" size="4" />
+            <input type="submit" value="Calculate" />
+        </form>
+
+
+
+    </div>
+
+    <div class="flex-item">
+        <p align='center'>Table</p>
+
+        <body>
+
+
+
+
+
+            </br>
+            </br>
+            </br>
+            <table align="center">
+                <tr>
+                    <th>
+
+                        <br />
+                        <div id="result"></div>
+
+                    </th>
+                </tr>
+            </table>
+        </body>
+        <script language="javascript">
+
+            function funcion(x) {
+                return Math.cos(x) - x * x * x;
+            }
+            function derivative(x) {
+                return -Math.sin(x) - 3.0 * x * x * x;
+            }
+            function process(formula) {
+                var i = 0;
+                var err, x_1, x = parseFloat(formula.x.value);
+                var result = '<table border="1"><thead><tr><td align="center">i</td><td align="center">x<sub></sub></td><td align="center">error</td></tr></thead><tbody>';
+                do {
+                    x_1 = x;
+                    x = x - funcion(x) / derivative(x);
+                    err = Math.abs((x - x_1) / x);
+                    result += '<tr> <td align = center> x<sub>' + i + '</sub></td> <td align = center>' + x_1 + '</td> <td align = center>' + err + '</td> </tr>';
+                    i++;
+                } while (x != x_1 && i < 100);
+                document.getElementById('result').innerHTML = result + '</tbody></table><br>' + (i == 100 ? 'the solution converges to ' : 'the solution is ' + x);
+                return false;
+            }</script>
+
+    </div>
+
+
+
+
+</div>
+
+<div class="flex-item">
+    <p align="center">Graph</p>
+
+
+</div>
+
+</html>
