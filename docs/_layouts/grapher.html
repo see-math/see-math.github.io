@@ -1,0 +1,90 @@
+<html>
+{% include head.html %}
+<script src="https://unpkg.com/mathjs/lib/browser/math.js"></script>
+<script src="https://cdn.plot.ly/plotly-2.12.1.min.js"></script>
+<body>
+
+    <script type="text/javascript">document.body.classList.add("is-loading");</script>
+
+    {% include header.html %}
+
+    <h1 align="center">Grapher</h1>
+    <div class="flex-container">
+        <div class="flex-item" align = 'center'>
+            <label for='inputexp'>Enter your function : </label><input id='inputexp' type="text"></input>
+        
+            <!-- <label for='inputnum'>InputBox : </label><input id='inputnum' type="text"></input> -->
+        
+            <!-- <button type="button" "calculatebtn" onclick="compute()">Calculate</button>     -->
+            </div>
+            <div>
+                <!-- The entered fucntion is <span id="showinputexp"></span> at x = <span id="showinputnum"></span> is <span id="ans"></span>. -->
+        
+            </div>
+            <div><button onclick="plot()">Plot</button></div>
+            <div id='myDiv1' align="center"></div>
+            <script>
+                
+            
+            function compute(){
+                var inputexp = document.getElementById('inputexp').value;
+                var inputnum = document.getElementById('inputnum').value;
+             // provide a scope
+                 const node2 = math.parse(inputexp)
+                 const code2 = node2.compile()
+                  let scope = {
+                  x: inputnum
+                  }
+            document.getElementById('showinputexp').innerHTML = inputexp;
+            document.getElementById('showinputnum').innerHTML = inputnum;
+            document.getElementById('ans').innerHTML = code2.evaluate(scope);
+            }
+        
+            function plot(){
+            var arr = [-7.0, -6.9, -6.8, -6.7, -6.6, -6.5, -6.4, -6.3, -6.2, -6.1, -6.0, -5.9, -5.8, -5.7, -5.6, -5.5, -5.4, -5.3, -5.2, -5.1, -5.0, -4.9, -4.8, -4.699999999999999, -4.6, -4.5, -4.4, -4.3, -4.199999999999999, -4.1, -4.0, -3.9, -3.8, -3.6999999999999997, -3.5999999999999996, -3.5, -3.4, -3.3, -3.1999999999999997, -3.0999999999999996, -3.0, -2.8999999999999995, -2.8, -2.7, -2.5999999999999996, -2.5, -2.3999999999999995, -2.3, -2.1999999999999993, -2.0999999999999996, -2.0, -1.8999999999999995, -1.7999999999999998, -1.6999999999999993, -1.5999999999999996, -1.5, -1.3999999999999995, -1.2999999999999998, -1.1999999999999993, -1.0999999999999996, -1.0, -0.8999999999999995, -0.7999999999999998, -0.6999999999999993, -0.5999999999999996, -0.5, -0.39999999999999947, -0.2999999999999998, -0.1999999999999993, -0.09999999999999964, 0.0, 0.10000000000000053, 0.20000000000000018, 0.3000000000000007, 0.40000000000000036, 0.5, 0.6000000000000005, 0.7000000000000002, 0.8000000000000007, 0.9000000000000004, 1.0, 1.0999999999999996, 1.200000000000001, 1.3000000000000007, 1.4000000000000004, 1.5, 1.5999999999999996, 1.700000000000001, 1.8000000000000007, 1.9000000000000004, 2.0, 2.0999999999999996, 2.200000000000001, 2.3000000000000007, 2.4000000000000004, 2.5, 2.6000000000000014, 2.700000000000001, 2.8000000000000007, 2.9000000000000004, 3.0, 3.1000000000000014, 3.200000000000001, 3.3000000000000007, 3.4000000000000004, 3.5, 3.6000000000000014, 3.700000000000001, 3.8000000000000007, 3.9000000000000004, 4.0, 4.100000000000001, 4.200000000000001, 4.300000000000001, 4.4, 4.5, 4.600000000000001, 4.700000000000001, 4.800000000000001, 4.9, 5.0, 5.100000000000001, 5.200000000000001, 5.300000000000001, 5.4, 5.5, 5.600000000000001, 5.700000000000001, 5.800000000000001, 5.9, 6.0, 6.100000000000001, 6.200000000000001, 6.300000000000001, 6.4, 6.5, 6.600000000000001, 6.700000000000001, 6.800000000000001, 6.9];
+            var result = arr.map(func);
+            
+            var trace1 = {
+            x: arr,
+            y: result,
+            type: 'scatter',
+            marker:{
+                color : 'red'
+            },
+            mode : 'lines',
+            line : {
+                width : 2
+            }
+            };
+        
+            var data = [trace1];
+        
+            var layout = {
+                title: 'Test',
+                width: 550,
+                height: 400,
+            };
+            Plotly.newPlot('myDiv1', data, layout,{scrollZoom: true, editable:true, displaylogo:false});
+        
+        
+            }
+            function func(num){
+                var inputexp = document.getElementById('inputexp').value;
+             // provide a scope
+                 const node2 = math.parse(inputexp)
+                 const code2 = node2.compile()
+                  let scope = {
+                  x: num
+                  }
+            return code2.evaluate(scope);
+            }
+            </script>
+
+
+    </div>
+
+
+
+</body>
+
+</html>
