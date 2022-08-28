@@ -1,26 +1,40 @@
+<!DOCTYPE html>
+<!--
+	Forty by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
 <html>
 {% include head.html %}
+
+<body>
+
+<!-- Main -->
+<div id="main" class="alt">
+
+    <!-- One -->
+    <section id="one">
+        <div class="inner">
+            <header class="major">
+                <h1>{{ page.title }}</h1>
+            </header>
+        
+
 <script src="https://unpkg.com/mathjs/lib/browser/math.js"></script>
 <script src="https://cdn.plot.ly/plotly-2.12.1.min.js"></script>
-<body>
 
     <script type="text/javascript">document.body.classList.add("is-loading");</script>
 
     {% include header.html %}
 
-    <h1 align="center">Grapher</h1>
     <div class="flex-container">
-        <div class="flex-item" align = 'center'>
+        <div class= "grapher_input">
             <label for='inputexp'>Enter your function : </label><input id='inputexp' type="text"></input>
         
             <!-- <label for='inputnum'>InputBox : </label><input id='inputnum' type="text"></input> -->
         
             <!-- <button type="button" "calculatebtn" onclick="compute()">Calculate</button>     -->
-            </div>
-            <div>
-                <!-- The entered fucntion is <span id="showinputexp"></span> at x = <span id="showinputnum"></span> is <span id="ans"></span>. -->
-        
-            </div>
+        </div>
             <div><button onclick="plot()">Plot</button></div>
             <div id='myDiv1' align="center"></div>
             <script>
@@ -84,7 +98,12 @@
     </div>
 
 
+</div>
+</section>
 
+</div>
+
+    {% include footer.html %}
 </body>
 
 </html>
