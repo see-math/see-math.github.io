@@ -1,16 +1,16 @@
-current directory: /mnt/d/fifth_sem/comp_project/forty-jekyll/vendor/bundle/ruby/2.7.0/gems/eventmachine-1.2.7/ext/fastfilereader
-/usr/bin/ruby2.7 -I /usr/lib/ruby/2.7.0 -r ./siteconf20220828-102-1kezydm.rb extconf.rb
+current directory: /mnt/d/fifth_sem/comp_project/see-math.github.io/docs/vendor/bundle/ruby/2.7.0/gems/eventmachine-1.2.7/ext/fastfilereader
+/usr/bin/ruby2.7 -I /usr/lib/ruby/2.7.0 -r ./siteconf20220829-3360-uc1t75.rb extconf.rb
 creating Makefile
 
-current directory: /mnt/d/fifth_sem/comp_project/forty-jekyll/vendor/bundle/ruby/2.7.0/gems/eventmachine-1.2.7/ext/fastfilereader
+current directory: /mnt/d/fifth_sem/comp_project/see-math.github.io/docs/vendor/bundle/ruby/2.7.0/gems/eventmachine-1.2.7/ext/fastfilereader
 make "DESTDIR=" clean
 
-current directory: /mnt/d/fifth_sem/comp_project/forty-jekyll/vendor/bundle/ruby/2.7.0/gems/eventmachine-1.2.7/ext/fastfilereader
+current directory: /mnt/d/fifth_sem/comp_project/see-math.github.io/docs/vendor/bundle/ruby/2.7.0/gems/eventmachine-1.2.7/ext/fastfilereader
 make "DESTDIR="
 compiling mapper.cpp
 compiling rubymain.cpp
 linking shared-object fastfilereaderext.so
 
-current directory: /mnt/d/fifth_sem/comp_project/forty-jekyll/vendor/bundle/ruby/2.7.0/gems/eventmachine-1.2.7/ext/fastfilereader
+current directory: /mnt/d/fifth_sem/comp_project/see-math.github.io/docs/vendor/bundle/ruby/2.7.0/gems/eventmachine-1.2.7/ext/fastfilereader
 make "DESTDIR=" install
-/usr/bin/install -c -m 0755 fastfilereaderext.so ./.gem.20220828-102-1og159i
+/usr/bin/install -c -m 0755 fastfilereaderext.so ./.gem.20220829-3360-5uq7dh

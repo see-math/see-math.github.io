@@ -1,5 +1,5 @@
-current directory: /mnt/d/fifth_sem/comp_project/forty-jekyll/vendor/bundle/ruby/2.7.0/gems/ffi-1.15.5/ext/ffi_c
-/usr/bin/ruby2.7 -I /usr/lib/ruby/2.7.0 -r ./siteconf20220828-102-x1dk36.rb extconf.rb
+current directory: /mnt/d/fifth_sem/comp_project/see-math.github.io/docs/vendor/bundle/ruby/2.7.0/gems/ffi-1.15.5/ext/ffi_c
+/usr/bin/ruby2.7 -I /usr/lib/ruby/2.7.0 -r ./siteconf20220829-3360-1ik74py.rb extconf.rb
 checking for ffi_prep_closure_loc() in -lffi... yes
 checking for ffi_prep_cif_var()... yes
 checking for ffi_raw_call()... yes
@@ -8,10 +8,10 @@ checking for whether -pthread is accepted as LDFLAGS... yes
 creating extconf.h
 creating Makefile
 
-current directory: /mnt/d/fifth_sem/comp_project/forty-jekyll/vendor/bundle/ruby/2.7.0/gems/ffi-1.15.5/ext/ffi_c
+current directory: /mnt/d/fifth_sem/comp_project/see-math.github.io/docs/vendor/bundle/ruby/2.7.0/gems/ffi-1.15.5/ext/ffi_c
 make "DESTDIR=" clean
 
-current directory: /mnt/d/fifth_sem/comp_project/forty-jekyll/vendor/bundle/ruby/2.7.0/gems/ffi-1.15.5/ext/ffi_c
+current directory: /mnt/d/fifth_sem/comp_project/see-math.github.io/docs/vendor/bundle/ruby/2.7.0/gems/ffi-1.15.5/ext/ffi_c
 make "DESTDIR="
 compiling AbstractMemory.c
 compiling ArrayType.c
@@ -38,6 +38,6 @@ compiling Variadic.c
 compiling ffi.c
 linking shared-object ffi_c.so
 
-current directory: /mnt/d/fifth_sem/comp_project/forty-jekyll/vendor/bundle/ruby/2.7.0/gems/ffi-1.15.5/ext/ffi_c
+current directory: /mnt/d/fifth_sem/comp_project/see-math.github.io/docs/vendor/bundle/ruby/2.7.0/gems/ffi-1.15.5/ext/ffi_c
 make "DESTDIR=" install
-/usr/bin/install -c -m 0755 ffi_c.so ./.gem.20220828-102-1lybhqz
+/usr/bin/install -c -m 0755 ffi_c.so ./.gem.20220829-3360-1p54du2

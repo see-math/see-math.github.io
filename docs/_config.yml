@@ -17,6 +17,7 @@ author: Group A
 tiles-source: pages # accepts "posts" or "pages"
 tiles-count: 8
 
+github: [metadata]
 # social settings (key must match name of font awesome icon)
 # see https://fontawesome.com/icons?d=gallery&p=2&s=brands
 # Icons are not shown if value is empty
@@ -42,3 +43,4 @@ exclude:
 - LICENSE.md
 - CONTRIBUTING.md
 - README.md 
+exclude: [vendor]
