@@ -7,12 +7,199 @@
 <html>
 
 {% include head.html %}
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
 
+body {
+  margin: 0;
+  font-family: Arial;
+}
+
+/* The grid: Four equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 25%;
+  padding: 10px;
+  height: 450px;
+  overflow: hidden;
+}
+
+/* Style the images inside the grid */
+.column img {
+  opacity: 0.9; 
+  cursor: pointer; 
+  height : 340px
+}
+
+.column img:hover {
+  opacity: 1;
+}
+
+.row1{
+	margin: 50px;
+	padding-left: 50px;
+}
+
+.row2{
+	margin: 50px;
+	position: relative;
+	display:flex;
+	justify-content: center;
+	
+}
+
+
+/* Clear floats after the columns */
+.row1:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.row2:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+h2{
+	text-align: center;
+
+}
+/* The expanding image container */
+.container {
+  position: center;
+  display: none;
+}
+
+/* Expanding image text */
+#imgtext {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  color: white;
+  font-size: 20px;
+}
+
+/* Closable button inside the expanded image */
+.closebtn {
+  position: absolute;
+  top: auto;
+  right: auto;
+  color: white;
+  font-size: 35px;
+  cursor: pointer;
+
+  
+}
+
+.caption{
+	z-index: 1;
+	position: relative;	
+}
+
+</style>
+</head>
 <body>
     <script type="text/javascript">document.body.classList.add("is-loading");</script>
 
-    {% include header.html %} {{ content }} {% include footer.html %}
+    {% include header.html %} 
 
+		<h2>Meet Our Team</h2>
+		
+
+		
+		<!-- The four columns -->
+		<div class="row1">
+		  <div class="column">
+			<div class="photo">
+			<img src="assets/images/praj.jpg"  style="width:100%" onclick="myFunction(this);">
+		  </div>
+		<div class="caption">
+		Prajanya Parakram Shrestha
+		</div>
+		</div>
+
+		<div class="column">
+			<div class="photo">
+			<img src="assets/images/bses.jpg" style="width:100%" onclick="myFunction(this);">
+			</div>
+		  
+		<div class="caption">
+		Bishesh Kafle
+		</div>
+	</div>
+		
+		<div class="column">
+			<div class="photo">
+			<img src="assets/images/pri.jpeg" style="width:100%" onclick="myFunction(this);">
+		  </div>
+		  <div class="caption">
+			  Priyanka Panta
+			</div>
+		</div>
+
+		  <div class="column">
+			<div class="photo">
+			<img src="assets/images/muku.jpeg" style="width:100%" onclick="myFunction(this);">
+		  </div>
+	<div class="caption">
+	Mukesh Tiwari
+	</div>	  
+		</div>
+		
+		<h2> Our Supervisors </h2>
+
+		<div class="row2">
+			
+			<div class="column">
+				<div class="photo">
+			  <img src="assets/images/super1.jpg"  style="width:100%" onclick="myFunction(this);">
+			</div>
+			<div class="caption">
+				Dr. Samir Shrestha<br>
+				Associate Professor,<br>
+				Department of Mathematics,<br>
+				Kathmandu University
+				
+				</div>	  
+			</div>
+
+			<div class="column">
+				<div class="photo">
+			  <img src="assets/images/super2.jpg" style="width:100%" onclick="myFunction(this);">
+			</div>
+			<div class="caption">
+				Amrit Dahal<br>
+				Lecturer<br>
+				Department of Computer Science and Engineering<br>
+				Kathmandu University
+				</div>	 
+			</div> 
+		  </div>
+		
+		<div class="container">
+		  <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+		  <img id="expandedImg" style="width:50%" >
+		  <div id="imgtext"></div>
+		</div>
+		
+		<script>
+		function myFunction(imgs) {
+		  var expandImg = document.getElementById("expandedImg");
+		  var imgText = document.getElementById("imgtext");
+		  expandImg.src = imgs.src;
+		  imgText.innerHTML = imgs.alt;
+		  expandImg.parentElement.style.display = "block";
+		}
+		</script>
+
+	{% include footer.html %}
 </body>
 
 </html>
