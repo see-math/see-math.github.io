@@ -7,9 +7,12 @@
 /* Footer */
 
 	#footer {
+		.icons{
+			margin-top: 1em;
+		}
 		.inner{
 			margin-left: 2em;
-			position: fixed;
+			position: relative;
     		bottom: 0;
 		}
 		.copyright {
