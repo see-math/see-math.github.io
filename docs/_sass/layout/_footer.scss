@@ -7,6 +7,11 @@
 /* Footer */
 
 	#footer {
+		.inner{
+			margin-left: 2em;
+			position: fixed;
+    		bottom: 0;
+		}
 		.copyright {
 			font-size: 0.8em;
 			list-style: none;

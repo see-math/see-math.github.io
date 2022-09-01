@@ -7,7 +7,7 @@
 /* Form */
 
 	form {
-		margin: 0 0 _size(element-margin) 0;
+		margin-left: 2em;
 
 		.field {
 			margin: 0 0 (_size(element-margin) * 1) 0;
@@ -133,7 +133,7 @@
 	}
 
 	input[type="checkbox"],
-	input[type="radio"], {
+	input[type="radio"]{
 		@include vendor('appearance', 'none');
 		display: block;
 		float: left;

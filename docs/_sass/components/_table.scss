@@ -13,22 +13,26 @@
 
 	table {
 		margin: 0 0 _size(element-margin) 0;
-		width: 100%;
+		margin-left: 2em;
+		width: 40%;
 
 		tbody {
 			tr {
-				border: solid 1px _palette(border);
-				border-left: 0;
-				border-right: 0;
+				font-size: 0.9em;
+				text-align: center;
+				// border: solid 1px _palette(border);
+				// border-left: 0;
+				// border-right: 0;
 
 				&:nth-child(2n + 1) {
-					background-color: _palette(border-bg);
+					// background-color: _palette(border-bg);
 				}
 			}
 		}
 
 		td {
 			padding: 0.75em 0.75em;
+			border: solid 2px _palette(border);
 		}
 
 		th {
@@ -36,11 +40,12 @@
 			font-size: 0.9em;
 			font-weight: _font(weight-bold);
 			padding: 0 0.75em 0.75em 0.75em;
-			text-align: left;
+			text-align: center;
 		}
 
 		thead {
 			border-bottom: solid 2px _palette(border);
+			font-weight: _font(weight-bold);
 		}
 
 		tfoot {
