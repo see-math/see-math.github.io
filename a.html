@@ -1,0 +1,64 @@
+<html>
+    <head>
+        <title>Test</title>
+        <script src="https://unpkg.com/mathjs/lib/browser/math.js"></script>
+    </head>
+    <body>
+        <div class= = "content">
+            <h1 align="center">Bisection Method</h1>
+            <div class="input_form">
+                <input id='inputexp' type="text"></input>
+                <input id='a' type="text"></input>
+                <input id='b' type="text"></input>
+            </div>
+            <div><button onclick="bisection()">Plot</button></div>
+            <div class = "bs_table">
+                <table id="bs" class="bs">
+                    <tr>
+                        <div id="result"></div>
+                    </tr>
+                </table>
+            </div>
+        <script>
+            function func(num){
+                var inputexp = document.getElementById('inputexp').value;
+             // provide a scope
+                 const node2 = math.parse(inputexp)
+                 const code2 = node2.compile()
+                  let scope = {
+                  x: num
+                  }
+            return code2.evaluate(scope);
+            }
+                    function bisection() {
+                        var a = document.getElementById('a').value;
+                        var b = document.getElementById('b').value;
+                        if (func(a) * func(b) >= 0) {
+                            console.log('You have not assumed right a and b\n');
+                            return;
+                        }
+                        var c = a;
+                        var i = 0;
+                        var result = '<table><thead><tr><td align="center">i</td> <td align="center">x<sub></sub></td></tr></thead><tbody>';
+                        while ((b-a) >= 0.01) {
+                            i++;
+                            // Find middle point
+                            c = (a+b)/2;
+                            // Check if middle point is root
+                            if (func(c) == 0.0) {
+                                break;
+                            }
+                            // Decide the side to repeat the steps
+                            if (func(c)*func(a) < 0) {
+                                b = c;
+                            } 
+                            else {
+                                a = c;
+                            }   
+                result += '<tr> <td align = "center"> x<sub>' + i + '</sub></td> <td align = "center">' + c.toFixed(4) + '</td></tr>';
+        }
+        document.getElementById('result').innerHTML = result + '</tbody></table><br>' + (i == 100 ? '  The solution converges to ' : '  The solution is ' + c.toFixed(4));
+    }
+        </script>
+    </body>
+</html>
