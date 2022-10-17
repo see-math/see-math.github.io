@@ -5,67 +5,79 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
-    {% include header.html %}
+{% include header.html %}
 {% include head.html %}
 
 <body>
-<div class= = "content">
-    <h1 align="center">Newton-Raphson Method</h1>
-    <label for="value">Enter the value:</label>
-    <div class="input_form">
-        <form name="formula" onsubmit="return process(this);">
-        <input class='nr_input' id="value" name="x" type="text" />
-            <input type="submit" value="Calculate" />
-        </form>
+    <div class=="content">
+        <h1 align="center">
+            <u>Newton-Raphson Method</u>
+        </h1>
+        <label for="value">Enter the value:</label>
+        <div class="input_form">
+            <form name="formula" onsubmit="return process(this);">
+                <input class='nr_input' id="value" name="x" type="text" />
+                <input type="submit" value="Calculate" />
+            </form>
 
+        </div>
+
+        <div class="sub-1">
+
+            <body>
+
+                </br>
+
+                <h3 align="center">Table:</h3>
+
+                <div class="nr_table" align="center">
+                    <table id="newton" class="newton">
+                        <tr>
+                            <div id="result"></div>
+
+                        </tr>
+                    </table>
+                </div>
+            </body>
+            <script language="javascript">
+
+                function funcion(x) {
+                    return Math.cos(x) - x * x * x;
+                }
+                function derivative(x) {
+                    return -Math.sin(x) - 3.0 * x * x * x;
+                }
+                function process(formula) {
+                    var i = 0;
+                    var err, x_1, x = parseFloat(formula.x.value);
+                    var result = '<table><thead><tr><td align="center">i</td><td align="center">x<sub></sub></td><td align="center">error</td></tr></thead><tbody>';
+                    do {
+                        x_1 = x;
+                        x = x - funcion(x) / derivative(x);
+                        err = Math.abs((x - x_1) / x);
+                        result += '<tr> <td > x<sub>' + i + '</sub></td> <td>' + x_1 + '</td> <td>' + err + '</td> </tr>';
+                        i++;
+                    } while (x != x_1 && i < 10);
+                    document.getElementById('result').innerHTML = result + '</tbody></table><br>' + (i == 100 ? '  The solution converges to ' : '  The solution is ' + x);
+                    return false;
+                }</script>
+
+        </div>
+
+        <div class="sub-2"><br>
+
+            <h3 align="center">Graph: </h3>
+            <p>graph halesi ya aaucha</p>
+
+
+
+
+        </div>
+        <div>{% include footer.html %}</div>
     </div>
 
-<div class="flex-item">
 
-    <body>
-
-        </br>
-        <label class ='tablename'> Table:</label>
-        <div class = "nr_table">
-            <table id="newton" class="newton">
-                <tr>
-                    <div id="result"></div>
-
-                </tr>
-            </table>
-        </div>
-    </body>
-    <script language="javascript">
-
-        function funcion(x) {
-            return Math.cos(x) - x * x * x;
-        }
-        function derivative(x) {
-            return -Math.sin(x) - 3.0 * x * x * x;
-        }
-        function process(formula) {
-            var i = 0;
-            var err, x_1, x = parseFloat(formula.x.value);
-            var result = '<table><thead><tr><td align="center">i</td><td align="center">x<sub></sub></td><td align="center">error</td></tr></thead><tbody>';
-            do {
-                x_1 = x;
-                x = x - funcion(x) / derivative(x);
-                err = Math.abs((x - x_1) / x);
-                result += '<tr> <td > x<sub>' + i + '</sub></td> <td>' + x_1 + '</td> <td>' + err + '</td> </tr>';
-                i++;
-            } while (x != x_1 && i < 5);
-            document.getElementById('result').innerHTML = result + '</tbody></table><br>' + (i == 100 ? '  The solution converges to ' : '  The solution is ' + x);
-            return false;
-        }</script>
-
-</div>
-
-<div id = "nr_graph" class="method_graph">
-    <label class = "nr_graph">Graph</label><br>
-
-jh
-</div>
-</div>
-{% include footer.html %}
 </body>
+
+
 </html>
