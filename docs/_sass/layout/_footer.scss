@@ -6,15 +6,16 @@
 
 /* Footer */
 
-	#footer {
+	#footer {	
+		padding: 15px;	
 		.icons{
 			margin-top: 1em;
 		}
 		.inner_footer{
 			padding-left: 15px;
-    		bottom: 0;
 		}
 		.copyright {
+			margin-top: 20px;
 			font-size: 0.8em;
 			list-style: none;
 			padding-left: 0;

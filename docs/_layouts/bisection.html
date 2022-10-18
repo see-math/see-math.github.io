@@ -6,26 +6,12 @@
 -->
 <html>
 {% include head.html %}
-
+{% include header.html %}
 <body>
-
-    <!-- Main -->
-    <!-- <div id="main" class="alt">
-
-
-        <section id="one">
-            <div class="inner">
-                <header class="major">
-                    <h1>{{ page.title }}</h1>
-                </header> --> -->
-
-
     <script src="https://unpkg.com/mathjs/lib/browser/math.js"></script>
     <script src="https://cdn.plot.ly/plotly-2.12.1.min.js"></script>
 
     <script type="text/javascript">document.body.classList.add("is-loading");</script>
-
-    {% include header.html %}
 
     <div class=="content">
         <h1 align="center"><u>Bisection Method</u></h1>
@@ -34,11 +20,11 @@
 
         <div class="input_form">
             <form name="formula"><label for="inputexp">calculate</label>
-                <input id='inputexp' type="text" style="width:90%" align="left">
+                <input id='inputexp' type="text" style="width:30%" align="left">
                 <label for="a">value 1</label>
-                <input id='a' type="text" style="width:90%" align="center">
+                <input id='a' type="text" style="width:30%" align="left">
                 <label for="b">value 2</label>
-                <input id='b' type="text" style="width:90%" align="right">
+                <input id='b' type="text" style="width:30%" align="left">
             </form>
 
         </div>
@@ -52,6 +38,10 @@
                     </tr>
                 </table>
             </div>
+        </div>
+        <div class="sub-2"><br>
+            <h3 align="center">Graph:</h3>
+            <p>Graph halesi ya aaucha</p>
         </div>
         <script>
             function func(num) {
@@ -94,15 +84,7 @@
                 document.getElementById('result').innerHTML = result + '</tbody></table><br>' + (i == 100 ? '  The solution converges to ' : '  The solution is ' + c.toFixed(4));
             }
         </script>
-        <div class="sub-2"><br>
-            <h3 align="center">Graph:</h3>
-            <p>Graph halesi ya aaucha</p>
-        </div>
     </div>
-    </div>
-    </section>
-    </div>
-    {% include footer.html %}
 </body>
-
+{% include footer.html %}
 </html>
