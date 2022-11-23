@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.3.1)  20 NOV 2022 23:38
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.3.1)  23 NOV 2022 18:55
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -266,104 +266,97 @@ Package pdftex.def Info: photos/kulogo.jpg  used on input line 89.
 [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./photos/kulogo.JPG>]
-(./Certificate_by_supervisor.tex [2]) [3] (./acknowledgement.tex
-Underfull \hbox (badness 10000) in paragraph at lines 12--14
+(./Certificate_by_supervisor.tex
+LaTeX Font Info:    Trying to load font information for U+msa on input line 34.
 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 15--17
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 18--20
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 21--23
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 24--26
-
- []
-
-) [4] (./abstract.tex) [5] (./main.toc
-LaTeX Font Info:    Trying to load font information for U+msa on input line 6.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 6.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 34.
+
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-))
+)
+Overfull \hbox (65.76308pt too wide) in paragraph at lines 25--44
+[]$[]$ $[]$ 
+ []
+
+) [2] (./acknowledgement.tex
+Underfull \hbox (badness 10000) in paragraph at lines 14--15
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 16--18
+
+ []
+
+) [3] (./abstract.tex) [4] (./main.toc [5
+
+])
 \tf@toc=\write3
 \openout3 = `main.toc'.
 
- [6
-
-] (./main.lof)
+ [6] (./main.lof)
 \tf@lof=\write4
 \openout4 = `main.lof'.
 
-
-[7
+ [7
 
 ] (./main.lot)
 \tf@lot=\write5
 \openout5 = `main.lot'.
 
- [8
+
+[8
 
 ] (./parameters.tex) [9] (./chapter1.tex
 CHAPTER 1.
 ) [1
 
-] (./chapter2.tex [2]
+] (./chapter2.tex
 CHAPTER 2.
-) [3
+) [2
 
 ] (./chapter3.tex
 CHAPTER 3.
-) [4
+) [3
 
 ] (./chapter4.tex
 CHAPTER 4.
-) [5
+) [4
 
 ] (./chapter5.tex
 CHAPTER 5.
-) [6
+) [5
 
 ] (./chapter6.tex
 CHAPTER 6.
-) [7
+) [6
 
-] (./main.bbl) [8
+] (./main.bbl) [7
 
 ] (./main.aux) ) 
 Here is how much of TeX's memory you used:
- 3180 strings out of 481239
- 41577 string characters out of 5920378
+ 3179 strings out of 481239
+ 41575 string characters out of 5920378
  283579 words of memory out of 5000000
  18383 multiletter control sequences out of 15000+600000
- 540930 words of font info for 55 fonts, out of 8000000 for 9000
+ 540566 words of font info for 54 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 30i,12n,31p,431b,320s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
-mbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.
-pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></u
-sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/sha
-re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on main.pdf (17 pages, 163085 bytes).
+ 30i,6n,31p,478b,320s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</u
+sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/sha
+re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/share/texmf/fonts/type
+1/public/cm-super/sfrm1200.pfb>
+Output written on main.pdf (16 pages, 158176 bytes).
 PDF statistics:
- 80 PDF objects out of 1000 (max. 8388607)
- 54 compressed objects within 1 object stream
+ 78 PDF objects out of 1000 (max. 8388607)
+ 53 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 
