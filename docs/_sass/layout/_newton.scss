@@ -9,18 +9,92 @@
     padding: 0;
 }
 
-.sub-1 {
-    float: left;
+.ns_table {
+    margin-left: 200px;
     border: 1px solid;
-    box-shadow: 2px 10px 4px blue;
-    width: 49%;
-    height: 500px;
-    overflow: scroll;
+    // box-shadow: 2px 10px 4px blue;
+    width: 50%;
+    height: 700px;
+    overflow-y: scroll;
+    padding-bottom: 10px;
+
 }
 
 .sub-2 {
+    margin: 10px 200px;
     border: 1px solid;
-    box-shadow: -2px 10px 4px blue;
-    width: 49%;
-    height: 500px;
+    box-shadow: 0px 0px 0px blue;
+    width: auto;
+    height: 562px;
+}
+
+.input_form {
+    margin-left: 40px;
+}
+
+label {
+    margin-left: 0px;
+}
+
+#box {
+    margin: auto;
+    max-width: 500px;
+    aspect-ratio: 1/1;
+
+}
+
+;
+
+.sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #242943;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidebar a {
+    text-decoration: none;
+    font-size: 25px;
+    display: block;
+    // transition: 0.3s;
+}
+
+
+.sidebar .closebtn {
+    position: relative;
+    right: 0;
+    font-size: 15px;
+    margin-left: 0px;
+}
+
+.openbtn {
+    font-size: 15px;
+}
+
+.openbtn:hover {
+    background-color: #444;
+}
+
+
+#main {
+    transition: margin-left .5s;
+    padding: 16px;
+    background-color: #242943;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+    .sidebar {
+        padding-top: 15px;
+    }
+
+    .sidebar a {
+        font-size: 18px;
+    }
 }

@@ -1,14 +1,4 @@
-<!DOCTYPE html>
-<!--
-	Forty by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-{% include header.html %}
-{% include head.html %}
-
-<body>
+<!-- <body>
     <div class=="content">
         <h1 align="center">
             <u>Newton-Raphson Method</u>
@@ -20,62 +10,313 @@
                 <input type="submit" value="Calculate" />
             </form>
 
+        </div> -->
+````````````````````````````
+<!DOCTYPE html>
+<html lang="en">
+{% include header.html %}
+{% include head.html %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Newton Rhapson</title>
+    <link rel="stylesheet" type="text/css" href="http://jsxgraph.uni-bayreuth.de/distrib/jsxgraph.css" />
+    <script type="text/javascript" src="http://jsxgraph.uni-bayreuth.de/distrib/jsxgraphcore.js"></script>
+    <script src="https://unpkg.com/mathjs/lib/browser/math.js"></script>
+    <script src="https://cdn.plot.ly/plotly-2.12.1.min.js"></script>
+</head>
+
+<body>
+    <div id="mySidebar" class="sidebar">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <div id="funcinput">
+            <label for="funcname">y = </label>
+            <input type="text" id="funcname" name="funcname"><br>
         </div>
 
-        <div class="sub-1">
+        <div id="diffinput">
+            <label for="diffname">y' = </label>
+            <input type="text" id="diffname" name="diffname"><br>
+        </div>
+
+        <div id="xinput">
+            <label for="xvalue">initial x = </label>
+            <input type="text" id="xvalue" name="xvalue"><br>
+        </div>
+        <button type="button" onclick="newton();init_graph()">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">Plot</a>
+        </button>
+
+    </div>
+
+    <div id="main">
+        <button class="openbtn" onclick="openNav()">☰ Get Started</button>
+    </div>
+    <script>
+        function openNav() {
+            document.getElementById("mySidebar").style.width = "250px";
+            document.getElementById("main").style.marginLeft = "250px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidebar").style.width = "0";
+            document.getElementById("main").style.marginLeft = "0";
+        }
+    </script>
+
+    <h3 align="center">Graph:</h3>
+    <div class="sub-2"><br>
+
+        <div id="box" class="jxgbox">
+        </div><br>
+        <div style="margin-left:40%">
+            <button type=" button" onclick=next_turtle()>
+                next
+            </button>
+
+            <button type="button" onclick=trace_turtle()>
+                animate
+            </button>
+        </div><br>
+        <div class="ns_table">
 
             <body>
 
                 </br>
 
                 <h3 align="center">Table:</h3>
+                <div align="center">
+                    <div class="nr_table" align="center">
+                        <table id="newton" class="newton">
+                            <tr>
+                                <div id="result"></div>
 
-                <div class="nr_table" align="center">
-                    <table id="newton" class="newton">
-                        <tr>
-                            <div id="result"></div>
-
-                        </tr>
-                    </table>
+                            </tr>
+                        </table>
+                    </div>
                 </div>
             </body>
             <script language="javascript">
-
-                function funcion(x) {
-                    return Math.cos(x) - x * x * x;
+                function func(num) {
+                    var inputexp = document.getElementById('funcname').value;
+                    // provide a scope
+                    const node2 = math.parse(inputexp)
+                    const code2 = node2.compile()
+                    let scope = {
+                        x: num
+                    }
+                    return code2.evaluate(scope);
                 }
-                function derivative(x) {
-                    return -Math.sin(x) - 3.0 * x * x * x;
+                function dfunc(num) {
+                    var inputexp = document.getElementById('diffname').value;
+                    // provide a scope
+                    const node2 = math.parse(inputexp)
+                    const code2 = node2.compile()
+                    let scope = {
+                        x: num
+                    }
+                    return code2.evaluate(scope);
                 }
-                function process(formula) {
+                function newton() {
                     var i = 0;
-                    var err, x_1, x = parseFloat(formula.x.value);
+                    var err = 0;
+                    var x_1 = 0;
+                    var x = document.getElementById('xvalue').value
                     var result = '<table><thead><tr><td align="center">i</td><td align="center">x<sub></sub></td><td align="center">error</td></tr></thead><tbody>';
                     do {
                         x_1 = x;
-                        x = x - funcion(x) / derivative(x);
+                        x = x - func(x) / dfunc(x);
                         err = Math.abs((x - x_1) / x);
-                        result += '<tr> <td > x<sub>' + i + '</sub></td> <td>' + x_1 + '</td> <td>' + err + '</td> </tr>';
+                        result += '<tr> <td > x<sub>' + i + '</sub></td> <td>' + x_1 + '</td> <td>' + err.toFixed(3) + '</td> </tr>';
                         i++;
-                    } while (x != x_1 && i < 10);
-                    document.getElementById('result').innerHTML = result + '</tbody></table><br>' + (i == 100 ? '  The solution converges to ' : '  The solution is ' + x);
+                    } while (x_1 != x && i < 10);
+                    document.getElementById('result').innerHTML = result + '</tbody></table><br>' + (i == 100 ? '  The solution converges to ' : '  The solution is ' + x.toFixed(4));
                     return false;
                 }</script>
 
         </div>
 
-        <div class="sub-2"><br>
 
-            <h3 align="center">Graph: </h3>
-            <p>graph halesi ya aaucha</p>
-
-
-
-
-        </div>
-        <div>{% include footer.html %}</div>
     </div>
+    <script>
+        var iter = 0
+        var iter_table
+        var f
+        var df
+        var root
+        var ineq1
+        var ineq2
+        var max_iter
+        var path = []
+        var tur
+        var curr_position = 0
 
+        //to ensure sleep when running animation
+        const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
+
+        const board = JXG.JSXGraph.initBoard('box', {
+            boundingbox: [-5, 5, 5, -5],
+            axis: true,
+            showCopyright: false,
+            showFullscreen: true
+        });
+
+        tur = board.create('turtle', [0, 0], {
+            strokeOpacity: 0.5
+        });
+        tur.setPenSize(1);
+        tur.pu();
+
+        function interval_spacing(start, end, n) {
+            let points = []
+            for (let i = 0; i <= n; i++) {
+                points.push(start + (end - start) * (i / n))
+            }
+            return points
+        }
+
+        function maxfunc(f, a, b, n = 1000) {
+            xarray = interval_spacing(a, b, n)
+            max = f(a)
+            for (let i = 0; i <= n; i++) {
+                if (f(xarray[i]) > max) {
+                    max = f(xarray[i])
+                }
+            }
+            return max
+        }
+
+        function minfunc(f, a, b, n = 1000) {
+            xarray = interval_spacing(a, b, n)
+            min = f(a)
+            for (let i = 0; i <= n; i++) {
+                if (f(xarray[i]) < min) {
+                    min = f(xarray[i])
+                }
+            }
+            return min
+        }
+
+
+        //creates a table for each row containing info of one iteration of newton rhapson algorithm
+        //returns 1 if error; array if sucessful
+        function nr_table(f, df, x, n) {
+            var iters = []
+
+            if (f(x) == 0) {
+                alert('root is at initial point' + x + 'itself')
+                return 1
+            }
+
+            max_iter = n
+
+            //row headers  x 
+
+            for (i = 0; i < n + 1; i++) {
+                iters.push(x)
+
+                x = x - (f(x) / df(x))
+
+            }
+            console.log(iters)
+            return iters
+        }
+
+        function init_graph() {
+            //get values from user
+            x = parseInt(document.getElementById('xvalue').value)
+
+            inputfunc = document.getElementById('funcname').value
+            console.log(inputfunc)
+            f = board.jc.snippet(inputfunc, true, 'x', false)
+
+            dfunc = document.getElementById('diffname').value
+            console.log(dfunc)
+            df = board.jc.snippet(dfunc, true, 'x', false)
+
+            //plot two functions
+            board.create('functiongraph', [f])
+            // board.create('functiongraph', [df]) no need to plot the derivative
+
+
+            //get max and min to set the viewport
+            let max = maxfunc(f, x - 2 * Math.abs(x), x + 2 * Math.abs(x), 1000)
+            let min = minfunc(f, x - 2 * Math.abs(x), x + 2 * Math.abs(x), 1000)
+            board.setBoundingBox([x - Math.abs(x), max * 1.2, x + Math.abs(x), min * 1.2])
+
+            //create a point
+            xpoint = board.create('point', [x, 0], {
+                face: 'x',
+                name: 'x0'
+            }).size(3)
+
+            // button2 = board.create('button', [mid, min*1.1 , 'Next', next_turtle ] , {}); add button on graph itself
+            iter_table = nr_table(f, df, x, 15)
+
+        }
+
+        function trace_turtle() {
+            tur.cs()
+            tur.pu()
+            tur.moveTo([iter_table[0], 0])
+            tur.pd()
+            for (i = 0; i < max_iter; i++) {
+                tur.lookTo([iter_table[i], f(iter_table[i])])
+                tur.moveTo([iter_table[i], f(iter_table[i])])
+
+                //create a point
+                board.create('point', [iter_table[i], 0], {
+                    face: 'x',
+                    name: ''
+                }).size(2)
+                board.create('point', [iter_table[i], f(iter_table[i])], {
+                    name: 'x' + String(i)
+                }).size(1)
+
+                tur.lookTo([iter_table[i + 1], 0])
+                tur.moveTo([iter_table[i + 1], 0])
+            }
+        }
+
+        function next_turtle() {
+            cx = iter_table[curr_position]
+            if (curr_position == 0) {
+                tur.cs()
+                tur.pu()
+                tur.moveTo([cx, 0])
+                tur.pd()
+                tangent = board.create('line', [
+                    [cx, f(cx)],
+                    [iter_table[curr_position + 1], 0]
+                ], {
+                    visible: true
+                });
+            }
+            tur.moveTo([cx, f(cx)])
+            tangent.point1.moveTo([cx, f(cx)])
+            tangent.point2.moveTo([iter_table[curr_position + 1], 0])
+            tur.moveTo([iter_table[curr_position + 1], 0])
+            //get max and min to set the viewport
+
+            let max = maxfunc(f, cx - 0.75 * Math.abs(cx), x + 0.75 * Math.abs(cx), 1000)
+            let min = minfunc(f, cx - 0.75 * Math.abs(cx), x + 0.75 * Math.abs(cx), 1000)
+            board.setBoundingBox([cx - 0.75 * Math.abs(cx), max * 1.2, cx + 0.75 * Math.abs(cx), min * 1.2])
+            curr_position++
+        }
+
+        async function animation() {
+            board.toFullscreen()
+            iter = 0
+            for (i = 0; i < max_iter; i++) {
+                animate_loop()
+                await sleep(1000);
+
+            }
+        }
+    </script>
+    </div>
 
 </body>
 
