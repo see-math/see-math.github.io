@@ -117,8 +117,8 @@
                 return code2.evaluate(scope);
             }
             function bisection() {
-                var a = Integer.parseInt(document.getElementById('avalue').value);
-                var b = Integer.parseInt(document.getElementById('bvalue').value);
+                var a = document.getElementById('avalue').value;
+                var b = document.getElementById('bvalue').value;
                 if (func(a) * func(b) >= 0) {
                     console.log('You have not assumed right a and b\n');
                     return;
@@ -129,7 +129,7 @@
                 while ((b - a) >= 0.01) {
                     i++;
                     // Find middle point
-                    c = (a + b) / 2;
+                    c = (b + b) / 2;
                     // Check if middle point is root
                     if (func(c) == 0.0) {
                         break;
