@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>zooooom</title>
+    <link rel="stylesheet" type="text/css" href="http://jsxgraph.uni-bayreuth.de/distrib/jsxgraph.css" />
+    <script type="text/javascript" src="http://jsxgraph.uni-bayreuth.de/distrib/jsxgraphcore.js"></script>
+</head>
+
+<body>
+    <div id="funcinput">
+        <label for="funcname">y = </label>
+        <input type="text" id="funcname" name="funcname"><br>
+    </div>
+
+    <div id="diffinput">
+        <label for="diffname">y' = </label>
+        <input type="text" id="diffname" name="diffname"><br>
+    </div>
+
+    <div id="xinput">
+        <label for="xvalue">initial x = </label>
+        <input type="text" id="xvalue" name="xvalue"><br>
+    </div>
+
+    <button type="button" onclick=init_graph()>
+        plot
+    </button>
+
+    <button type="button" onclick=next_turtle()>
+        next
+    </button>
+
+    <button type="button" onclick=moveslow()>
+        animate
+    </button>
+
+    <div id="box" class="jxgbox" style="max-width:600px; aspect-ratio: 1/1"></div>
+    <script src="zoom.js"></script>
+</body>

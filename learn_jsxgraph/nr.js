@@ -13,6 +13,7 @@ var curr_position = 0
 //to ensure sleep when running animation
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
 
+//create a board
 const board = JXG.JSXGraph.initBoard('box', {
     boundingbox: [-5, 5, 5, -5],
     axis: true,
@@ -20,12 +21,14 @@ const board = JXG.JSXGraph.initBoard('box', {
     showFullscreen: true
 });
 
+//create a turtle
 tur = board.create('turtle', [0, 0], {
     strokeOpacity: 0.5
 });
 tur.setPenSize(1);
 tur.pu();
 
+//emulates numspace returns n+1 points including end points
 function interval_spacing(start, end, n) {
     let points = []
     for (let i = 0; i <= n; i++) {
@@ -34,6 +37,7 @@ function interval_spacing(start, end, n) {
     return points
 }
 
+//get the maximum value of f(x) in the interval [a,b]
 function maxfunc(f, a, b, n = 1000) {
     xarray = interval_spacing(a, b, n)
     max = f(a)
@@ -45,6 +49,7 @@ function maxfunc(f, a, b, n = 1000) {
     return max
 }
 
+//get the minimum value of f(x) in the interval [a,b]
 function minfunc(f, a, b, n = 1000) {
     xarray = interval_spacing(a, b, n)
     min = f(a)
@@ -101,7 +106,7 @@ function init_graph() {
     //get max and min to set the viewport
     let max = maxfunc(f, x - 2 * Math.abs(x), x + 2 * Math.abs(x), 1000)
     let min = minfunc(f, x - 2 * Math.abs(x), x + 2 * Math.abs(x), 1000)
-    board.setBoundingBox([x -  Math.abs(x), max * 1.2, x +  Math.abs(x), min * 1.2])
+    board.setBoundingBox([x - Math.abs(x), max * 1.2, x + Math.abs(x), min * 1.2])
 
     //create a point
     xpoint = board.create('point', [x, 0], {
@@ -114,6 +119,7 @@ function init_graph() {
 
 }
 
+//called when animate button is pressed
 function trace_turtle() {
     tur.cs()
     tur.pu()
@@ -137,6 +143,7 @@ function trace_turtle() {
     }
 }
 
+//called when next button is pressed
 function next_turtle() {
     cx = iter_table[curr_position]
     if (curr_position == 0) {
@@ -157,12 +164,106 @@ function next_turtle() {
     tur.moveTo([iter_table[curr_position + 1], 0])
     //get max and min to set the viewport
 
-    let max = maxfunc(f, cx - 0.75 * Math.abs(cx), x + 0.75 * Math.abs(cx), 1000)
-    let min = minfunc(f, cx - 0.75 * Math.abs(cx), x + 0.75 * Math.abs(cx), 1000)
-    board.setBoundingBox([cx - 0.75 * Math.abs(cx), max * 1.2, cx + 0.75 * Math.abs(cx), min * 1.2])
+    //  old = board.getBoundingBox()
+
+    let now_max = maxfunc(f, cx - 0.75 * Math.abs(cx), x + 0.75 * Math.abs(cx), 1000)
+    let now_min = minfunc(f, cx - 0.75 * Math.abs(cx), x + 0.75 * Math.abs(cx), 1000)
+
+    //chnage this to get slow transition
+    now_ax = cx - 0.75 * Math.abs(cx)
+    now_ay = now_max * 1.2
+    now_bx = cx + 0.75 * Math.abs(cx)
+    now_by = now_min * 1.2
+
+    if (now_ay < 0) {
+        now_ay = 1
+    }
+    if (now_by > 0) {
+        now_by = -1
+    }
+
+    next_ax = cx - 0.75 * Math.abs(cx)
+    next_ay = max * 1.2
+    next_bx = cx + 0.75 * Math.abs(cx)
+    next_by = min * 1.2
+
+    if (now_ay < 0) {
+        now_ay = 1
+    }
+    if (now_by > 0) {
+        now_by = -1
+    }
+
+    let next_max = maxfunc(f, cx - 0.75 * Math.abs(cx), x + 0.75 * Math.abs(cx), 1000)
+    let next_min = minfunc(f, cx - 0.75 * Math.abs(cx), x + 0.75 * Math.abs(cx), 1000)
+
+    //chnage this to get slow transition
+    next_ax = cx - 0.75 * Math.abs(cx)
+    next_ay = max * 1.2
+    next_bx = cx + 0.75 * Math.abs(cx)
+    next_by = min * 1.2
+
+    if (next_ay < 0) {
+        next_ay = 1
+    }
+    if (next_by > 0) {
+        next_by = -1
+    }
+
+    next_ax = cx - 0.75 * Math.abs(cx)
+    next_ay = next_max * 1.2
+    next_bx = cx + 0.75 * Math.abs(cx)
+    next_by = next_min * 1.2
+
+    if (next_ay < 0) {
+        next_ay = 1
+    }
+    if (next_by > 0) {
+        next_by = -1
+    }
+    zoomandgo(now_ax, now_ay, now_bx, now_by, next_ax, next_ay, next_bx, next_by)
+    //board.setBoundingBox([cx - 0.75 * Math.abs(cx), max * 1.2, cx + 0.75 * Math.abs(cx), min * 1.2])
+
+    console.log(board.getBoundingBox())
     curr_position++
 }
 
+//zoom function
+async function zoomandgo(old_xa, old_ya, old_xb, old_yb, new_xa, new_ya, new_xb, new_yb) {
+
+    var zoom_xa = Math.max(old_xa, new_xa)
+    var zoom_ya = Math.max(old_ya, new_ya)
+    var zoom_xb = Math.max(old_xb, new_xb)
+    var zoom_yb = Math.max(old_yb, new_yb)
+
+    board.setBoundingBox([old_xa, old_ya, old_xb, old_yb])
+
+    xa_tran = interval_spacing(old_xa, zoom_xa, 100)
+    ya_tran = interval_spacing(old_ya, zoom_ya, 100)
+    xb_tran = interval_spacing(old_xb, zoom_xb, 100)
+    yb_tran = interval_spacing(old_yb, zoom_yb, 100)
+
+    for (i = 0; i < 101; i++) {
+        board.setBoundingBox([xa_tran[i], ya_tran[i], xb_tran[i], yb_tran[i]])
+        await sleep(10)
+    }
+
+
+    board.setBoundingBox([zoom_xa, zoom_ya, zoom_xb, zoom_yb])
+
+    xa_tran = interval_spacing(zoom_xa, new_xa, 100)
+    ya_tran = interval_spacing(zoom_ya, new_ya, 100)
+    xb_tran = interval_spacing(zoom_xb, new_xb, 100)
+    yb_tran = interval_spacing(zoom_yb, new_yb, 100)
+
+    for (i = 0; i < 101; i++) {
+        board.setBoundingBox([xa_tran[i], ya_tran[i], xb_tran[i], yb_tran[i]])
+        await sleep(10)
+    }
+}
+
+
+//animate function from bisection
 async function animation() {
     board.toFullscreen()
     iter = 0
