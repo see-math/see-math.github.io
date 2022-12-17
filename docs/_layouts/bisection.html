@@ -117,13 +117,13 @@
                 return code2.evaluate(scope);
             }
             function bisection() {
-                var a = document.getElementById('avalue').value;
-                var b = document.getElementById('bvalue').value;
+                var a = Integer.parseInt(document.getElementById('avalue').value);
+                var b = Integer.parseInt(document.getElementById('bvalue').value);
                 if (func(a) * func(b) >= 0) {
                     console.log('You have not assumed right a and b\n');
                     return;
                 }
-                var c = a;
+                var c = 0;
                 var i = 0;
                 var result = '<table><thead><tr><td align="center">i</td> <td align="center">x<sub></sub></td></tr></thead><tbody>';
                 while ((b - a) >= 0.01) {
