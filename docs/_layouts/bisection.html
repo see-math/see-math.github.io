@@ -129,7 +129,7 @@
                 while ((b - a) >= 0.01) {
                     i++;
                     // Find middle point
-                    c = (b + b) / 2;
+                    c = (Integer.parseInt(a) + Integer.parseInt(b)) / 2;
                     // Check if middle point is root
                     if (func(c) == 0.0) {
                         break;
