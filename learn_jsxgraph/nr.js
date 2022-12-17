@@ -164,7 +164,7 @@ function next_turtle() {
     tur.moveTo([iter_table[curr_position + 1], 0])
     //get max and min to set the viewport
 
-    //  old = board.getBoundingBox()
+    //old = board.getBoundingBox()
 
     let now_max = maxfunc(f, cx - 0.75 * Math.abs(cx), x + 0.75 * Math.abs(cx), 1000)
     let now_min = minfunc(f, cx - 0.75 * Math.abs(cx), x + 0.75 * Math.abs(cx), 1000)
@@ -182,37 +182,15 @@ function next_turtle() {
         now_by = -1
     }
 
-    next_ax = cx - 0.75 * Math.abs(cx)
-    next_ay = max * 1.2
-    next_bx = cx + 0.75 * Math.abs(cx)
-    next_by = min * 1.2
+    ncx = iter_table[curr_position+ 1]
 
-    if (now_ay < 0) {
-        now_ay = 1
-    }
-    if (now_by > 0) {
-        now_by = -1
-    }
-
-    let next_max = maxfunc(f, cx - 0.75 * Math.abs(cx), x + 0.75 * Math.abs(cx), 1000)
-    let next_min = minfunc(f, cx - 0.75 * Math.abs(cx), x + 0.75 * Math.abs(cx), 1000)
+    let next_max = maxfunc(f, ncx - 0.75 * Math.abs(ncx), x + 0.75 * Math.abs(ncx), 1000)
+    let next_min = minfunc(f, ncx - 0.75 * Math.abs(ncx), x + 0.75 * Math.abs(ncx), 1000)
 
     //chnage this to get slow transition
-    next_ax = cx - 0.75 * Math.abs(cx)
-    next_ay = max * 1.2
-    next_bx = cx + 0.75 * Math.abs(cx)
-    next_by = min * 1.2
-
-    if (next_ay < 0) {
-        next_ay = 1
-    }
-    if (next_by > 0) {
-        next_by = -1
-    }
-
-    next_ax = cx - 0.75 * Math.abs(cx)
+    next_ax = ncx - 0.75 * Math.abs(ncx)
     next_ay = next_max * 1.2
-    next_bx = cx + 0.75 * Math.abs(cx)
+    next_bx = ncx + 0.75 * Math.abs(ncx)
     next_by = next_min * 1.2
 
     if (next_ay < 0) {
@@ -221,6 +199,7 @@ function next_turtle() {
     if (next_by > 0) {
         next_by = -1
     }
+
     zoomandgo(now_ax, now_ay, now_bx, now_by, next_ax, next_ay, next_bx, next_by)
     //board.setBoundingBox([cx - 0.75 * Math.abs(cx), max * 1.2, cx + 0.75 * Math.abs(cx), min * 1.2])
 

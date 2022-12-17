@@ -2,6 +2,6 @@
 layout: newton
 title: Newton Raphson Method
 description: Newton's Method
-image: assets/images/pic07.jpg
+image: assets/images/nr.png
 nav-menu: true
 ---

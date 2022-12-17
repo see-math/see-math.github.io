@@ -6,11 +6,11 @@ description: Visaulize Numerical Methods Algorithms
 baseurl: "" # the subpath of your site, e.g. /blog
 url: # the base hostname & protocol for your site
 author: Group A
-street_address: 1234 Somewhere Road
-city: Nashville
-state: TN
-zip_code: 55555
-country: United States of America
+street_address: Kathmandu University
+city: Dhulikhel
+state: Bagmati
+zip_code: 123456
+country: Nepal
 phone: (716) 555-5555
 
 # homepage tiles
