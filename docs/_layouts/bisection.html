@@ -141,9 +141,9 @@
                     else {
                         a = c;
                     }
-                    result += '<tr> <td align = "center"> x<sub>' + i + '</sub></td> <td align = "center">' + c.toFixed(4) + '</td></tr>';
+                    result += '<tr> <td align = "center"> x<sub>' + i + '</sub></td> <td align = "center">' + c+ '</td></tr>';
                 }
-                document.getElementById('result').innerHTML = result + '</tbody></table><br>' + (i == 100 ? '  The solution converges to ' : '  The solution is ' + c.toFixed(4));
+                document.getElementById('result').innerHTML = result + '</tbody></table><br>' + (i == 100 ? '  The solution converges to ' : '  The solution is ' + c);
             }
         </script>
         <script>
