@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.7.25)  17 DEC 2022 23:07
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.7.25)  18 DEC 2022 01:30
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -304,20 +304,19 @@ Underfull \hbox (badness 10000) in paragraph at lines 16--18
 
  []
 
-) [3] (./abstract.tex) [4] (./main.toc [5
-
-])
+) [3] (./abstract.tex) [4] (./main.toc)
 \tf@toc=\write3
 \openout3 = `main.toc'.
 
- [6] (./main.lof)
+ [5
+
+] (./main.lof)
 \tf@lof=\write4
 \openout4 = `main.lof'.
 
- [7
+ [6
 
-]
-(./chapter1.tex
+] (./chapter1.tex
 CHAPTER 1.
 [1
 
@@ -328,7 +327,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 50--51
 
 ) [2] (./chapter3.tex
 CHAPTER 2.
-<seemath1.png, id=35, 1927.2pt x 3491.0425pt>
+<seemath1.png, id=32, 1927.2pt x 3491.0425pt>
 File: seemath1.png Graphic file (type png)
 <use seemath1.png>
 Package pdftex.def Info: seemath1.png  used on input line 17.
@@ -343,51 +342,66 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 LaTeX Warning: Text page 4 contains only floats.
 
 [4 <./seemath1.png>]
-<seemath3.png, id=44, 1019.007pt x 390.258pt>
+<seemath3.png, id=41, 1019.007pt x 390.258pt>
 File: seemath3.png Graphic file (type png)
 <use seemath3.png>
 Package pdftex.def Info: seemath3.png  used on input line 26.
-(pdftex.def)             Requested size: 364.19667pt x 139.47449pt.
-<seemath4.png, id=45, 181.8795pt x 409.53pt>
+(pdftex.def)             Requested size: 405.16698pt x 155.16551pt.
+<seemath4.png, id=42, 181.8795pt x 409.53pt>
 File: seemath4.png Graphic file (type png)
 <use seemath4.png>
 Package pdftex.def Info: seemath4.png  used on input line 34.
-(pdftex.def)             Requested size: 113.81102pt x 256.26805pt.
+(pdftex.def)             Requested size: 109.26108pt x 246.01984pt.
  [5 <./seemath3.png> <./seemath4.png>]
-<seemath5.png, id=50, 557.08125pt x 419.166pt>
+<seemath6.png, id=47, 1290.8225pt x 908.39375pt>
+File: seemath6.png Graphic file (type png)
+<use seemath6.png>
+Package pdftex.def Info: seemath6.png  used on input line 43.
+(pdftex.def)             Requested size: 405.16698pt x 285.11983pt.
+<seemath7.png, id=48, 1601.985pt x 899.36pt>
+File: seemath7.png Graphic file (type png)
+<use seemath7.png>
+Package pdftex.def Info: seemath7.png  used on input line 49.
+(pdftex.def)             Requested size: 405.16698pt x 227.46056pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[6 <./seemath6.png>]
+<seemath5.png, id=53, 557.08125pt x 419.166pt>
 File: seemath5.png Graphic file (type png)
 <use seemath5.png>
-Package pdftex.def Info: seemath5.png  used on input line 42.
+Package pdftex.def Info: seemath5.png  used on input line 58.
 (pdftex.def)             Requested size: 227.62206pt x 171.27074pt.
-) [6 <./seemath5.png>] (./chapter4.tex
+) [7 <./seemath7.png> <./seemath5.png>] (./chapter4.tex
 CHAPTER 3.
-) [7
+) [8
 
 ] (./chapter5.tex
 CHAPTER 4.
-[8
+[9
 
-]) [9] (./main.bbl) [10
+]) [10] (./main.bbl) [11
 
 ] (./main.aux) ) 
 Here is how much of TeX's memory you used:
- 3643 strings out of 478023
- 55315 string characters out of 5838176
+ 3663 strings out of 478023
+ 55657 string characters out of 5838176
  359617 words of memory out of 5000000
- 22032 multiletter control sequences out of 15000+600000
+ 22052 multiletter control sequences out of 15000+600000
  476712 words of font info for 55 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 55i,6n,62p,754b,324s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 55i,7n,62p,754b,324s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {d:/programs/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/c
 m-super-ts1.enc}<d:/programs/texlive/2022/texmf-dist/fonts/type1/public/amsfont
 s/cm/cmbx12.pfb><d:/programs/texlive/2022/texmf-dist/fonts/type1/public/amsfont
 s/cm/cmr12.pfb><d:/programs/texlive/2022/texmf-dist/fonts/type1/public/amsfonts
 /cm/cmti12.pfb><d:/programs/texlive/2022/texmf-dist/fonts/type1/public/cm-super
 /sfrm1200.pfb>
-Output written on main.pdf (17 pages, 2452238 bytes).
+Output written on main.pdf (17 pages, 2526287 bytes).
 PDF statistics:
- 89 PDF objects out of 1000 (max. 8388607)
+ 93 PDF objects out of 1000 (max. 8388607)
  53 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 26 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 36 words of extra memory for PDF output out of 10000 (max. 10000000)
 
