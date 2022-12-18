@@ -88,7 +88,7 @@ function nr_table(f, df, x, n) {
 
 function init_graph() {
     //get values from user
-    x = parseInt(document.getElementById('xvalue').value)
+    x = parseFloat(document.getElementById('xvalue').value)
 
     inputfunc = document.getElementById('funcname').value
     console.log(inputfunc)
